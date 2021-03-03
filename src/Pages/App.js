@@ -1,12 +1,11 @@
 import './App.css';
-import axios from 'axios';
+// import { Route, Switch, Redirect } from 'react-router-dom';
 import React, { useState, useEffect, useCallback } from 'react';
 //COMPONENTS
 import Login from '../Pages/Login/Login';
 import LoggedIn from '../Pages/LoggedIn/LoggedIn';
 
 export default function App() {
-
   // const accessToken = {"username":"test", "password":"test123!"};
   
 
@@ -23,17 +22,21 @@ export default function App() {
 
   
 
-  function handleLogOut () {
-    localStorage.removeItem('token')
-  }
+  
   
 
   return (
     <div className="App">
+      {localStorage.getItem('token') ? 
+        <>
+          <LoggedIn />
+        </>
+        :
+        <>
+          <Login />
+        </>}
       
-      {localStorage.getItem('token') ? <h1>logged in</h1> : null}
-      <button onClick={() => { handleLogOut () }}
-      >Log Out</button>
+      
     </div>
   );
 }
