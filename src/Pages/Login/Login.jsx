@@ -14,11 +14,11 @@ export default function Login ({ user, setUser }) {
         setCredentials({ ...credentials, [evt.target.name]: evt.target.value });
         setError('');
     }
-
+    // slight bug here where error message never shows
     async function handleSubmit(evt) {
         evt.preventDefault();
         try {
-            await usersAPI.login(credentials);
+            const something = await usersAPI.login(credentials);
             setUser(getToken());
         } catch {
           setError('Log In Failed - Try Again');
