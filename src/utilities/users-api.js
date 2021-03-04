@@ -6,22 +6,25 @@ const BASE_URL = '/api/users';
 //     return sendRequest(`${BASE_URL}/login`, 'POST', credentials)
 // }
 
-export async function login(req, res) {
+export async function login(credentials) {
     try {
-        const result = await axios({
-            method: 'post',
-            url: 'https://messaging-test.bixly.com/api-token-auth/',
-            headers: {},
-            data: {
-            "username":"test", "password":"test123!"
-            }
-        })
-        //see what's coming back
-        console.log(result);
-        //save token in local storage
-        localStorage.setItem('token', result.data.token)
-        const token = localStorage.getItem('token');
-        console.log(token);
+      const p = credentials.password;
+      const u = credentials.username;
+      const result = await axios({
+          method: 'post',
+          url: 'https://messaging-test.bixly.com/api-token-auth/',
+          headers: {},
+          data: {
+          "username":{u}.u, "password":{p}.p
+          }
+      })
+      // see what's coming back
+      console.log(result);
+      console.log(credentials)
+      //save token in local storage
+      localStorage.setItem('token', result.data.token)
+      const token = localStorage.getItem('token');
+      console.log(token);
         
     } catch (err) {
         console.log(err);
