@@ -6,19 +6,7 @@ import Login from '../Pages/Login/Login';
 import LoggedIn from '../Pages/LoggedIn/LoggedIn';
 
 export default function App() {
-  // const accessToken = {"username":"test", "password":"test123!"};
   
-
-  // axios.interceptors.request.use(
-  //   config => {
-  //     config.headers.Authorization = `Token ${accessToken}`;
-  //     return config;
-  //   },
-  //   error => {
-  //     return Promise.reject(error);
-  //   }
-  // );
-  // console.log(accessToken);
 
   
 

@@ -1,12 +1,16 @@
 import axios from 'axios';
-import { Link } from 'react-router-dom';
 
-const apiUrl = 'https://messaging-test.bixly.com'
-export async function login() {
+const BASE_URL = '/api/users';
+
+// export function login (credentials) {
+//     return sendRequest(`${BASE_URL}/login`, 'POST', credentials)
+// }
+
+export async function login(req, res) {
     try {
         const result = await axios({
             method: 'post',
-            url: `${apiUrl}/api-token-auth/`,
+            url: 'https://messaging-test.bixly.com/api-token-auth/',
             headers: {},
             data: {
             "username":"test", "password":"test123!"
@@ -37,3 +41,23 @@ export async function login() {
   //   }
   // );
   // console.log(accessToken);
+
+// Helper Function
+
+async function sendRequest(url, method = 'GET', payload = null) {
+    const options = { method };
+    if (payload) {
+      options.headers = { 'Content-Type': 'application/json' };
+      options.body = JSON.stringify(payload);
+    }
+    // if the token exists, add it to header with correct syntax
+    const token = localStorage.getItem('token');
+    if (token) {
+      // Ensure the headers object exists
+      options.headers = options.headers || {};
+      options.headers.Authorization = `Token ${token}`;
+    }
+    const res = await fetch(url, options);
+    if (res.ok) return res.json();
+    throw new Error('Bad Request');
+  }
