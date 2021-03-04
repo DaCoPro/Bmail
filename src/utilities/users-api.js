@@ -8,6 +8,7 @@ const BASE_URL = '/api/users';
 
 export async function login(credentials) {
     try {
+      //see if you can eliminate these two lines later
       const p = credentials.password;
       const u = credentials.username;
       const result = await axios({
