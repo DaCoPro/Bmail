@@ -14,15 +14,12 @@ export default function Login ({ user, setUser }) {
         setCredentials({ ...credentials, [evt.target.name]: evt.target.value });
         setError('');
     }
-    if(localStorage.getItem('token')) console.log('token')
-    console.log(user)
+
     async function handleSubmit(evt) {
         evt.preventDefault();
         try {
             await usersAPI.login(credentials);
             setUser(getToken());
-        //   console.log(result)
-            // history.push('/inbox');
         } catch {
           setError('Log In Failed - Try Again');
         }
@@ -30,9 +27,6 @@ export default function Login ({ user, setUser }) {
 
     return (
         <div className="LoginPage">
-            {/* <h1>Login Page</h1>
-            <button onClick={() => { usersAPI.login() }}
-            >Fetch Data</button> */}
             <div>
                 <div className="form-container" onSubmit={handleSubmit}>
                     <form autoComplete="off" >
