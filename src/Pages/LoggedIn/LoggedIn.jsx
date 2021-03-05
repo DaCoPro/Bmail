@@ -9,9 +9,10 @@ import NavBar from '../../Components/NavBar/NavBar';
 import Inbox from '../../Components/Inbox/Inbox';
 import Sent from '../../Components/Sent/Sent';
 import Compose from '../../Components/Compose/Compose';
+import Loading from '../../Components/Loading/Loading';
 
 export default function LoggedIn ({ user, setUser }) {
-    const [activeTab, setActiveTab] = useState(1);
+    const [activeTab, setActiveTab] = useState(0);
     const [messages, setMessages] = useState([]);
     const [sentMessages, setSentMessages] = useState([]);
 
@@ -25,7 +26,18 @@ export default function LoggedIn ({ user, setUser }) {
           }
         }
         fetchMessages();
-      }, []);
+    }, []);
+
+    function checkLoaded() {
+        if (activeTab !== 0) {
+            return;
+        } else if (messages === []) {
+            setTimeout(checkLoaded, 500);
+        } else {
+            setActiveTab(1);
+        }
+    }
+    setTimeout(checkLoaded, 300);
 
     return (
         <div className="LoggedIn">
@@ -38,8 +50,14 @@ export default function LoggedIn ({ user, setUser }) {
                     setActiveTab={setActiveTab}
                     setUser={setUser}
                 />
-                {activeTab === 1 ? <Inbox /> : null}
-                {activeTab === 2 ? <Sent /> : null}
+
+                {activeTab === 0 ? <Loading /> : null}
+                {activeTab === 1 ? <Inbox 
+                    messages={messages}
+                /> : null}
+                {activeTab === 2 ? <Sent 
+                    sentMessages={sentMessages}    
+                /> : null}
                 {activeTab === 3 ? <Compose /> : null}
             </div>
             
