@@ -5,7 +5,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 export default function Inbox ({ messages }) {
    
     const messageList = messages.data.map(m => 
-        <InboxListItem message={m} />
+        <InboxListItem key={m.id} message={m} />
     );
     
 

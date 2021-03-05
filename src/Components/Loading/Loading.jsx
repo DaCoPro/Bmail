@@ -1,9 +1,9 @@
 import './Loading.css';
-
+import loadingImg from './loadingImg.png';
 export default function Loading () {
     return (
         <div className="Loading">
-            <h1>Loading</h1>
+            <img src={loadingImg} />
         </div>
     )
 }
