@@ -2,7 +2,6 @@ import './LoggedIn.css';
 
 import { useState, useEffect } from 'react';
 
-// import * as usersAPI from '../../utilities/users-api';
 import * as messagesAPI from '../../utilities/messages-api';
 import Header from '../../Components/Header/Header';
 import NavBar from '../../Components/NavBar/NavBar';
@@ -10,11 +9,13 @@ import Inbox from '../../Components/Inbox/Inbox';
 import Sent from '../../Components/Sent/Sent';
 import Compose from '../../Components/Compose/Compose';
 import Loading from '../../Components/Loading/Loading';
+import ActionRibbon from '../../Components/ActionRibbon/ActionRibbon';
 
 export default function LoggedIn ({ user, setUser }) {
     const [activeTab, setActiveTab] = useState(0);
     const [messages, setMessages] = useState([]);
     const [sentMessages, setSentMessages] = useState([]);
+    const [activeMsg, setActiveMsg] = useState(0);
 
     useEffect(function() {
         async function fetchMessages() {
@@ -37,7 +38,7 @@ export default function LoggedIn ({ user, setUser }) {
             setActiveTab(1);
         }
     }
-    setTimeout(checkLoaded, 300);
+    setTimeout(checkLoaded, 500);
 
     return (
         <div className="LoggedIn">
@@ -49,16 +50,32 @@ export default function LoggedIn ({ user, setUser }) {
                     activeTab={activeTab}
                     setActiveTab={setActiveTab}
                     setUser={setUser}
+                    setActiveMsg={setActiveMsg}
                 />
+                <div className="BodyDisplayDiv">
+                    <ActionRibbon 
+                        activeMsg={activeMsg} 
+                        setMessages={setMessages}
+                        setSentMessages={setSentMessages}
+                    />
+                    {activeTab === 0 ? <Loading /> : null}
+                    {activeTab === 1 ? <Inbox 
+                        messages={messages}
+                        activeMsg={activeMsg}
+                        setActiveMsg={setActiveMsg}
+                        activeTab={activeTab}
+                        setMessages={setMessages}
+                    /> : null}
+                    {activeTab === 2 ? <Sent 
+                        sentMessages={sentMessages}  
+                        activeMsg={activeMsg}
+                        setActiveMsg={setActiveMsg}  
+                        activeTab={activeTab}
+                    /> : null}
+                    {activeTab === 3 ? <Compose /> : null}
 
-                {activeTab === 0 ? <Loading /> : null}
-                {activeTab === 1 ? <Inbox 
-                    messages={messages}
-                /> : null}
-                {activeTab === 2 ? <Sent 
-                    sentMessages={sentMessages}    
-                /> : null}
-                {activeTab === 3 ? <Compose /> : null}
+                </div>
+                
             </div>
             
         </div>

@@ -12,7 +12,7 @@ export async function getMessages() {
     })
     return messages;
 }
-  
+
 export async function getSentMessages() {
     const sentMessages = await axios({
         method: 'get',
@@ -23,5 +23,33 @@ export async function getSentMessages() {
         data: {}
     })
     return sentMessages;
+}
+
+//data is already saved, but getting again due to required route.
+export async function getDetails(id) {
+    const message = await axios({
+        method:'get', 
+        url:`https://messaging-test.bixly.com/messages/${id}/`,
+        headers: {
+            Authorization: `Token ${token}`
+        },
+        data: {}
+    })
+    console.log(message)
+    return message;
+}
+
+//data is already saved, but getting again due to required route.
+export async function deleteMsg(id) {
+    const message = await axios({
+        method:'delete', 
+        url:`https://messaging-test.bixly.com/messages/${id}/`,
+        headers: {
+            Authorization: `Token ${token}`
+        },
+        data: {}
+    })
+    console.log(message);
+    return message;
 }
 
