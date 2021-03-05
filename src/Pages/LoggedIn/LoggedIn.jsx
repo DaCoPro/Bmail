@@ -53,26 +53,32 @@ export default function LoggedIn ({ user, setUser }) {
                     setActiveMsg={setActiveMsg}
                 />
                 <div className="BodyDisplayDiv">
-                    <ActionRibbon 
-                        activeMsg={activeMsg} 
-                        setMessages={setMessages}
-                        setSentMessages={setSentMessages}
-                    />
-                    {activeTab === 0 ? <Loading /> : null}
-                    {activeTab === 1 ? <Inbox 
-                        messages={messages}
-                        activeMsg={activeMsg}
-                        setActiveMsg={setActiveMsg}
-                        activeTab={activeTab}
-                        setMessages={setMessages}
-                    /> : null}
-                    {activeTab === 2 ? <Sent 
-                        sentMessages={sentMessages}  
-                        activeMsg={activeMsg}
-                        setActiveMsg={setActiveMsg}  
-                        activeTab={activeTab}
-                    /> : null}
-                    {activeTab === 3 ? <Compose /> : null}
+                    <div className="DisplayRibbon">
+                        <ActionRibbon 
+                            activeMsg={activeMsg} 
+                            setMessages={setMessages}
+                            setSentMessages={setSentMessages}
+                        />
+
+                    </div>
+                    <div className="DisplayBody">
+                        {activeTab === 0 ? <Loading /> : null}
+                        {activeTab === 1 ? <Inbox 
+                            messages={messages}
+                            activeMsg={activeMsg}
+                            setActiveMsg={setActiveMsg}
+                            activeTab={activeTab}
+                            setMessages={setMessages}
+                        /> : null}
+                        {activeTab === 2 ? <Sent 
+                            sentMessages={sentMessages}  
+                            activeMsg={activeMsg}
+                            setActiveMsg={setActiveMsg}  
+                            activeTab={activeTab}
+                        /> : null}
+                        {activeTab === 3 ? <Compose /> : null}
+
+                    </div>
 
                 </div>
                 

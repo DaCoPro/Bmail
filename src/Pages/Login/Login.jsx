@@ -17,6 +17,7 @@ export default function Login ({ user, setUser }) {
     // slight bug here where error message never shows
     async function handleSubmit(evt) {
         evt.preventDefault();
+        //fix weird code here, save user's name
         try {
             const something = await usersAPI.login(credentials);
             setUser(getToken());

@@ -39,7 +39,6 @@ export async function getDetails(id) {
     return message;
 }
 
-//data is already saved, but getting again due to required route.
 export async function deleteMsg(id) {
     const message = await axios({
         method:'delete', 
@@ -49,7 +48,26 @@ export async function deleteMsg(id) {
         },
         data: {}
     })
-    console.log(message);
     return message;
 }
 
+export async function sendMsg(content) {
+    const r = content.receiver
+    const t = content.title
+    const b = content.body
+    const result = await axios({
+        method:'post',
+        url:'https://messaging-test.bixly.com/messages/',
+        headers: {
+            Authorization: `Token ${token}`,
+            'Content-Type': 'application/json'
+        },
+        data: {
+            "title": {t}.t,
+            "body": {b}.b,
+            "receiver": {r}.r
+        }
+    
+    })
+    return result;
+}
