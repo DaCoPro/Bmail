@@ -9,6 +9,9 @@
     align-items: flex-start;
     padding-left: 30px;
     padding-top: 30px;
+    padding-bottom: 50px;
+    border-bottom: 1px solid;
+    border-color: #D5D7D8;
 }
 
 .ComposeBtn {
@@ -25,8 +28,47 @@
 
 .BoxLinks {
     padding-left: 6px;
+    width: 100%;
+    
+}
+
+.BoxLinks > p {
+    display: flex;
+    align-items: center;
+    width: 40%;
+    border-radius: 5px;
+    /* background-color: red; */
 }
 
 .NavBar > button {
     align-self: flex-end;
 }
+
+.NavSecondary {
+    display: flex;
+    align-items: flex-end;
+    justify-content: left;
+    height: 20%;
+   
+}
+
+.NavSecondary > button {
+    margin-left: 20px;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.NavSecondary > button:hover {
+    background-color: #e53534;
+    color: white;
+}
+
+.BoxLinks > p:hover {
+    background-color: white;
+}
+
+ .Active {
+    background-color: #E5E7EA;
+}
+

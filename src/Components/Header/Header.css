@@ -1,8 +1,9 @@
 .Header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
     background-color: #f3f3f3;
+    border-bottom: 1px solid;
+    border-color: #D5D7D8;
 }
 
 .HeaderLogo {
@@ -16,6 +17,6 @@
 }
 
 .Header > h4 {
-    padding-right: 40px;
+    /* padding-right: 40px; */
 }
 

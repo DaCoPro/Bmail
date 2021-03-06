@@ -23,7 +23,7 @@ export default function ActionRibbon ({ setMessages, setSentMessages, activeMsg 
     
     return (
         <div className="ActionRibbon">
-            <h5 onClick={ handleRefresh } >REFRESH</h5>
+            <h5 className="ActionItem" onClick={ handleRefresh } >REFRESH</h5>
 
             {activeMsg ? <h5 onClick={ handleDeleteMsg }>DELETE</h5> : null}
             

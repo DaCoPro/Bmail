@@ -7,7 +7,7 @@ export default function Inbox ({ setMessages, activeTab, messages, activeMsg, se
     
 
     const messageList = messages.data.map(m => 
-        <InboxListItem key={m.id} message={m} setActiveMsg={setActiveMsg}/>
+        <InboxListItem key={m.id} message={m} setActiveMsg={setActiveMsg} setMessages={setMessages} />
     );
     
 
@@ -16,7 +16,7 @@ export default function Inbox ({ setMessages, activeTab, messages, activeMsg, se
             {activeMsg ? 
             <div><Detail setMessages={setMessages} activeTab={activeTab} activeMsg={activeMsg} /> </div>
             :
-            <div><h1>Inbox</h1>
+            <div>
             {messageList}</div>
             }
             

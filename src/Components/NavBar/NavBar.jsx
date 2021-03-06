@@ -33,7 +33,7 @@ export default function NavBar ({ activeTab, setActiveTab, setUser, setActiveMsg
                 </div>
 
             </div>
-            <hr/>
+            
             <div className="NavSecondary">
                 <button onClick={() => { handleLogOut()  }}
                 >Log Out</button>

@@ -78,6 +78,7 @@ export default function LoggedIn ({ user, setUser, userName }) {
                             activeMsg={activeMsg}
                             setActiveMsg={setActiveMsg}  
                             activeTab={activeTab}
+                            setSentMessages={setSentMessages}
                         /> : null}
                         {activeTab === 3 ? <Compose /> : null}
 

@@ -1,0 +1,9 @@
+.InboxListItem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    border-bottom: 1px solid;
+    border-color: #d5d7d8;
+}
+
