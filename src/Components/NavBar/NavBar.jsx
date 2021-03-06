@@ -20,19 +20,25 @@ export default function NavBar ({ activeTab, setActiveTab, setUser, setActiveMsg
         <div className="NavBar">
             <div className="NavItemDiv">
                 <h4 onClick={() => setActiveTab(3)}
-                    className={activeTab === 3 ? 'Active' : 'Not'}
+                    className="ComposeBtn"
                 >Compose</h4>
-                <h4 onClick={ handleInboxClick }
-                    className={activeTab === 1 ? 'Active' : 'Not'}
-                >Inbox</h4>
-                <h4 onClick={ handleSentClick }
-                    className={activeTab === 2 ? 'Active' : 'Not'}
-                >Sent</h4>
+                <div className="BoxLinks">
+
+                    <p onClick={ handleInboxClick }
+                        className={activeTab === 1 ? 'Active' : 'Not'}
+                    >Inbox</p>
+                    <p onClick={ handleSentClick }
+                        className={activeTab === 2 ? 'Active' : 'Not'}
+                    >Sent</p>
+                </div>
 
             </div>
             <hr/>
-            <button onClick={() => { handleLogOut()  }}
-            >Log Out</button>
+            <div className="NavSecondary">
+                <button onClick={() => { handleLogOut()  }}
+                >Log Out</button>
+
+            </div>
         </div>
 
     )

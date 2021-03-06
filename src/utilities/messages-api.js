@@ -35,7 +35,6 @@ export async function getDetails(id) {
         },
         data: {}
     })
-    console.log(message)
     return message;
 }
 

@@ -1,4 +1,32 @@
 .NavBar {
-    background-color: grey;
+    background-color: #f3f3f3;
     height: 100%;
+}
+
+.NavItemDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 30px;
+    padding-top: 30px;
+}
+
+.ComposeBtn {
+    background-color: #ffffff;
+    padding: 10px;
+    border: 1px solid grey;
+    border-radius: 20px;
+}
+
+.ComposeBtn:hover {
+    box-shadow: 2px 2px;
+    cursor: pointer;
+}
+
+.BoxLinks {
+    padding-left: 6px;
+}
+
+.NavBar > button {
+    align-self: flex-end;
 }

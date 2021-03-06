@@ -1,8 +1,10 @@
 import './Compose.css';
 import * as messagesAPI from '../../utilities/messages-api';
 import { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 export default function Compose () {
+    const history = useHistory();
     const [content, setContent] = useState({
         "title":"",
         "body":"",
@@ -17,7 +19,7 @@ export default function Compose () {
         evt.preventDefault();
         try {
             await messagesAPI.sendMsg(content);
-            
+            history.push('/');
         } catch {
           setError('Message Failed to Send - Try Again');
         }
@@ -25,15 +27,28 @@ export default function Compose () {
     return (
         <div className="Compose">
             <div>
-                <div className="form-container" onSubmit={handleSubmit}>
+                <div className="ComposeHeader">
+                    <h4>New Message</h4>
+                </div>
+                <div className="ComposeForm" onSubmit={handleSubmit}>
                     <form autoComplete="off" >
-                    <label>To: </label>
-                    <input type="text" name="receiver" value={content.receiver} onChange={handleChange} required />
-                    <label>Title: </label>
-                    <input type="text" name="title" value={content.title} onChange={handleChange} required />
-                    <label>Content: </label>
-                    <input type="text" name="body" value={content.body} onChange={handleChange} required />
-                    <button type="submit">SEND</button>
+                        <div className="InputField">
+                            <label>To: </label>
+                            <input type="text" name="receiver" value={content.receiver} onChange={handleChange} required />
+                        </div>
+                        <hr/>
+                        <div className="InputField">
+                            <label>Title: </label>
+                            <input type="text" name="title" value={content.title} onChange={handleChange} required />
+                        </div>
+                        <hr/>
+                        <div className="ContentField">
+                            <label>Content: </label>
+                            <input type="text" name="body" value={content.body} onChange={handleChange} required />
+                        </div>
+                        
+                        <button type="submit">SEND</button>
+                        
                     </form>
                 </div>
                 <p className="error-message">&nbsp;{error}</p>

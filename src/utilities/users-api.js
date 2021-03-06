@@ -19,16 +19,13 @@ export async function login(credentials) {
           "username":{u}.u, "password":{p}.p
           }
       })
-      // see what's coming back
-      console.log(result);
-      console.log(credentials)
       //save token in local storage
       localStorage.setItem('token', result.data.token)
-      const token = localStorage.getItem('token');
-      console.log(token);
+      return result;
         
     } catch (err) {
         console.log(err);
+        return err;
     }
 };
 

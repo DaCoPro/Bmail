@@ -10,18 +10,19 @@ import LoggedIn from '../Pages/LoggedIn/LoggedIn';
 
 export default function App() {
   const [user, setUser] = useState(getToken());
+  const [userName, setUserName] = useState('');
   
   return (
     <div className="App">
       {user ?
         <Switch>
           <Route path="/inbox">
-            <LoggedIn user={user} setUser={setUser} />
+            <LoggedIn user={user} setUser={setUser} userName={userName} />
           </Route>
           <Redirect to="/inbox" />
         </Switch> 
         :
-        <Login user={user} setUser={setUser} />
+        <Login user={user} setUser={setUser} setUserName={setUserName} />
       }
         
       

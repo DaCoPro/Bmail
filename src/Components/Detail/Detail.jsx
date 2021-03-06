@@ -11,7 +11,7 @@ export default function Detail ({ activeMsg, setMessages }) {
     function checkLoaded () {
         if (msg !== []) setLoaded(true);
     }
-    setTimeout(checkLoaded, 500);
+    setTimeout(checkLoaded, 800);
 
     useEffect(function() {
         async function fetchMsg() {

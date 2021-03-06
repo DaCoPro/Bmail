@@ -11,11 +11,13 @@ import Compose from '../../Components/Compose/Compose';
 import Loading from '../../Components/Loading/Loading';
 import ActionRibbon from '../../Components/ActionRibbon/ActionRibbon';
 
-export default function LoggedIn ({ user, setUser }) {
+export default function LoggedIn ({ user, setUser, userName }) {
     const [activeTab, setActiveTab] = useState(0);
     const [messages, setMessages] = useState([]);
     const [sentMessages, setSentMessages] = useState([]);
     const [activeMsg, setActiveMsg] = useState(0);
+
+    
 
     useEffect(function() {
         async function fetchMessages() {
@@ -43,7 +45,7 @@ export default function LoggedIn ({ user, setUser }) {
     return (
         <div className="LoggedIn">
             <div className="HeaderDiv">
-                <Header /> 
+                <Header userName={userName} /> 
             </div>
             <div className="BodyDiv">
                 <NavBar 
@@ -54,12 +56,13 @@ export default function LoggedIn ({ user, setUser }) {
                 />
                 <div className="BodyDisplayDiv">
                     <div className="DisplayRibbon">
+                        {activeTab !== 3 ? 
                         <ActionRibbon 
                             activeMsg={activeMsg} 
                             setMessages={setMessages}
                             setSentMessages={setSentMessages}
                         />
-
+                        : null}
                     </div>
                     <div className="DisplayBody">
                         {activeTab === 0 ? <Loading /> : null}
