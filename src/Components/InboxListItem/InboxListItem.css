@@ -26,3 +26,7 @@
     align-items: center;
     justify-content: center;
 }
+
+.ListItem:hover  {
+    background-color: #367CF0;
+}

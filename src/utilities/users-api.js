@@ -1,10 +1,5 @@
 import axios from 'axios';
 
-const BASE_URL = '/api/users';
-
-// export function login (credentials) {
-//     return sendRequest(`${BASE_URL}/login`, 'POST', credentials)
-// }
 
 export async function login(credentials) {
     try {
@@ -29,37 +24,3 @@ export async function login(credentials) {
     }
 };
 
-
-// const accessToken = {"username":"test", "password":"test123!"};
-  
-
-  // axios.interceptors.request.use(
-  //   config => {
-  //     config.headers.Authorization = `Token ${accessToken}`;
-  //     return config;
-  //   },
-  //   error => {
-  //     return Promise.reject(error);
-  //   }
-  // );
-  // console.log(accessToken);
-
-// Helper Function
-
-async function sendRequest(url, method = 'GET', payload = null) {
-    const options = { method };
-    if (payload) {
-      options.headers = { 'Content-Type': 'application/json' };
-      options.body = JSON.stringify(payload);
-    }
-    // if the token exists, add it to header with correct syntax
-    const token = localStorage.getItem('token');
-    if (token) {
-      // Ensure the headers object exists
-      options.headers = options.headers || {};
-      options.headers.Authorization = `Token ${token}`;
-    }
-    const res = await fetch(url, options);
-    if (res.ok) return res.json();
-    throw new Error('Bad Request');
-  }

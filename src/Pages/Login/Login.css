@@ -57,3 +57,7 @@
 .LoginHeader > img {
     height: 60px;
 }
+
+.LoginField > input {
+    text-align: center;
+}

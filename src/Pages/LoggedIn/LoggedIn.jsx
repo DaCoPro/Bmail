@@ -40,7 +40,7 @@ export default function LoggedIn ({ user, setUser, userName }) {
             setActiveTab(1);
         }
     }
-    setTimeout(checkLoaded, 500);
+    setTimeout(checkLoaded, 1000);
 
     return (
         <div className="LoggedIn">
