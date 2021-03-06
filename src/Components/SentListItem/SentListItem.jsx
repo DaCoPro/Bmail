@@ -17,9 +17,16 @@ export default function SentListItem ({ sentMessage, setActiveMsg, setSentMessag
         history.push('/');
     }
     return (
-        <div onClick={handleMessageClick} className="SentListItem">
-            <h4 >{sentMessage.receiver} {sentMessage.title}</h4>
-            <button onClick={handleDeleteMsg}>Delete</button>
+        <div onClick={handleMessageClick} className="ListItem">
+            <div className="IndexLabel">
+                <h4>{sentMessage.title}</h4>
+            </div>
+            <div className="IndexLabel">
+                <h4>{sentMessage.sender}</h4>
+            </div>
+            <div className="IndexLabel">
+                <button className="IndexTrash" onClick={handleDeleteMsg}>delete</button>
+            </div>
         </div>
     )
 }

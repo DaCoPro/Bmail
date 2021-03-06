@@ -1,0 +1,9 @@
+.DetailsBody {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.DetailsMsg {
+    padding-top: 30px;
+}

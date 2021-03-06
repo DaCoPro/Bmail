@@ -6,9 +6,20 @@ export default function ShowDetails ({ setMessages, msg, activeMsg }) {
         
         <div className="ShowDetails">
             <div className="DetailsBody">
-                <h2>{msg.data.title}</h2>
-                <h4>{msg.data.body}</h4>
-                <h4>{msg.data.sent}</h4>
+                <div className="DetailTitle">
+                    <h2>{msg.data.title}</h2>   
+                </div>
+                <div className="DetailsInfo">
+                    <h4>Sent by {msg.data.sender} on {msg.data.sent}</h4>
+                </div>
+                <div className="DetailsMsg">
+                    <h4>{msg.data.body}</h4>
+
+                </div>
+                
+                
+                    
+                
 
 
             </div>

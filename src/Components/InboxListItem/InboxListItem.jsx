@@ -15,10 +15,16 @@ export default function InboxListItem ({ message, setActiveMsg, setMessages}) {
         history.push('/');
     }
     return (
-        <div onClick={handleMessageClick} className="InboxListItem">
-           
-            <h4>{message.sender} {message.title}</h4>
-            <button onClick={handleDeleteMsg}>delete</button>
+        <div onClick={handleMessageClick} className="ListItem">
+            <div className="IndexLabel">
+                <h4>{message.title}</h4>
+            </div>
+            <div className="IndexLabel">
+                <h4>{message.sender}</h4>
+            </div>
+            <div className="IndexLabel">
+                <button className="IndexTrash" onClick={handleDeleteMsg}>delete</button>
+            </div>
         </div>
     )
 } 

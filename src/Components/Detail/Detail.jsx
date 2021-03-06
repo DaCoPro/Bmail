@@ -26,7 +26,6 @@ export default function Detail ({ activeMsg, setMessages }) {
 
     return (
         <div className="Detail">
-            
             {loaded ? <div><ShowDetails setMessages={setMessages} activeMsg={activeMsg} msg={msg} /></div> : <Loading />}
         </div>
     )
