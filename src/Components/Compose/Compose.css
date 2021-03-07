@@ -1,50 +1,48 @@
 .Compose {
-    /* background-color: #f3f3f3; */
-    height: 100%;
+  /* background-color: #f3f3f3; */
+  height: 100%;
 }
 
 .ComposeHeader {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 
-    
-    background-color: #383838;
-    color: white;
-    height: 40px;
+  background-color: #383838;
+  color: white;
+  height: 40px;
 }
 
 .ComposeHeader > h4 {
-    padding-left: 20px;
-   
+  padding-left: 20px;
 }
 
 .ComposeForm {
-    background-color: white;
+  background-color: white;
 }
 
 input {
-    border: none;
-    height: 30px;
-    width: 90%;
+  border: none;
+  height: 30px;
+  width: 90%;
 }
 
 .InputField {
-    display: flex;
-    align-items: center;
-    padding-left: 20px;
-    height: 40px;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  height: 40px;
 }
 
 .ContentField {
-    padding-left: 20px;
-    height: 200px;
+  padding-left: 20px;
+  height: 200px;
 }
 
 .ComposeForm > form > button {
-    background-color: #0f6Ce1;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    margin-left: 20px;
-    height: 30px;
+  background-color: #0f6ce1;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  margin-left: 20px;
+  height: 30px;
 }

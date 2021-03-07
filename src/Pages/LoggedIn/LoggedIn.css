@@ -1,26 +1,26 @@
 .LoggedIn {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
 }
 
 .HeaderDiv {
-    background-color: grey;
-    width: 100%;
+  background-color: grey;
+  width: 100%;
 }
 
 .BodyDiv {
-    display: grid;
-    grid-template-columns: 1fr 4fr;
-    width: 100%;
-    height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  width: 100%;
+  height: 100%;
 }
 
 .DisplayRibbon {
-    background-color: lightblue;
+  background-color: lightblue;
 }
 
 .DisplayBody {
-    height: 100%;
+  height: 100%;
 }

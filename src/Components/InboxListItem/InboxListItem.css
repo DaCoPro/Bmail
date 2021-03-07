@@ -1,32 +1,32 @@
 .ListItem {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    height: 40px;
-    border-bottom: 1px solid;
-    border-color: #d5d7d8;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  height: 40px;
+  border-bottom: 1px solid;
+  border-color: #d5d7d8;
 }
 
 .IndexLabel {
-    padding-left: 40px;
+  padding-left: 40px;
 }
 
 .IndexTrash {
-    margin-right: 40px;
-    border: none;
-    border-radius: 5px;
+  margin-right: 40px;
+  border: none;
+  border-radius: 5px;
 }
 
 .IndexTrash:hover {
-    background-color: #e53534;
-    color: white;
+  background-color: #e53534;
+  color: white;
 }
 
 .IndexLabel {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.ListItem:hover  {
-    background-color: #367CF0;
+.ListItem:hover {
+  background-color: #367cf0;
 }

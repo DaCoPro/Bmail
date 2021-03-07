@@ -1,74 +1,71 @@
 .NavBar {
-    background-color: #f3f3f3;
-    height: 100%;
+  background-color: #f3f3f3;
+  height: 100%;
 }
 
 .NavItemDiv {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding-left: 30px;
-    padding-top: 30px;
-    padding-bottom: 50px;
-    border-bottom: 1px solid;
-    border-color: #D5D7D8;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 30px;
+  padding-top: 30px;
+  padding-bottom: 50px;
+  border-bottom: 1px solid;
+  border-color: #d5d7d8;
 }
 
 .ComposeBtn {
-    background-color: #ffffff;
-    padding: 10px;
-    border: 1px solid grey;
-    border-radius: 20px;
+  background-color: #ffffff;
+  padding: 10px;
+  border: 1px solid grey;
+  border-radius: 20px;
 }
 
 .ComposeBtn:hover {
-    box-shadow: 2px 2px;
-    cursor: pointer;
+  box-shadow: 2px 2px;
+  cursor: pointer;
 }
 
 .BoxLinks {
-    padding-left: 6px;
-    width: 100%;
-    
+  padding-left: 6px;
+  width: 100%;
 }
 
 .BoxLinks > p {
-    display: flex;
-    align-items: center;
-    width: 40%;
-    border-radius: 5px;
-    /* background-color: red; */
+  display: flex;
+  align-items: center;
+  width: 40%;
+  border-radius: 5px;
+  /* background-color: red; */
 }
 
 .NavBar > button {
-    align-self: flex-end;
+  align-self: flex-end;
 }
 
 .NavSecondary {
-    display: flex;
-    align-items: flex-end;
-    justify-content: left;
-    height: 20%;
-   
+  display: flex;
+  align-items: flex-end;
+  justify-content: left;
+  height: 20%;
 }
 
 .NavSecondary > button {
-    margin-left: 20px;
-    border: none;
-    border-radius: 5px;
-    padding: 5px;
+  margin-left: 20px;
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
 }
 
 .NavSecondary > button:hover {
-    background-color: #e53534;
-    color: white;
+  background-color: #e53534;
+  color: white;
 }
 
 .BoxLinks > p:hover {
-    background-color: white;
+  background-color: white;
 }
 
- .Active {
-    background-color: #E5E7EA;
+.Active {
+  background-color: #e5e7ea;
 }
-
