@@ -15,7 +15,6 @@ export default function NavBar({
     setActiveTab(1);
     setActiveMsg(0);
   }
-  //make this DRY later
   function handleSentClick() {
     setActiveTab(2);
     setActiveMsg(0);

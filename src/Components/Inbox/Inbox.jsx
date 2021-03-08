@@ -1,7 +1,7 @@
 import "./Inbox.css";
 import Detail from "../Detail/Detail";
 import InboxListItem from "../InboxListItem/InboxListItem";
-import React, { useState, useEffect, useCallback } from "react";
+import React from "react";
 
 export default function Inbox({
   setMessages,

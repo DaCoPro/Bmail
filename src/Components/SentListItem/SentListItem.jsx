@@ -6,16 +6,19 @@ export default function SentListItem({
   sentMessage,
   setActiveMsg,
   setSentMessages,
+  user,
 }) {
   const history = useHistory();
   function handleMessageClick() {
     setActiveMsg(sentMessage.id);
   }
   async function handleDeleteMsg() {
-    messagesAPI.deleteMsg(sentMessage.id);
-    const sentMessages = await messagesAPI.getSentMessages();
-    setSentMessages(sentMessages);
-    history.push("/");
+    if (user) {
+      messagesAPI.deleteMsg(sentMessage.id);
+      const sentMessages = await messagesAPI.getSentMessages();
+      setSentMessages(sentMessages);
+      history.push("/");
+    }
   }
   return (
     <div onClick={handleMessageClick} className="ListItem">

@@ -8,6 +8,7 @@ export default function Sent({
   activeMsg,
   setActiveMsg,
   setSentMessages,
+  user,
 }) {
   const messageList = sentMessages.data.map((sM) => (
     <SentListItem
@@ -15,6 +16,7 @@ export default function Sent({
       key={sM.id}
       sentMessage={sM}
       setActiveMsg={setActiveMsg}
+      user={user}
     />
   ));
 

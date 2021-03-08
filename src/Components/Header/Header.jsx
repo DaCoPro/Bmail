@@ -1,14 +1,13 @@
 import "./Header.css";
 import logo from "./logo-1.png";
 
-export default function Header({ userName }) {
+export default function Header() {
   return (
     <div className="Header">
       <div className="HeaderLogo">
-        <img src={logo} />
+        <img src={logo} alt="Bmail Logo" />
         <h1 className="Bmail">Bmail</h1>
       </div>
-      {/* <h4>Welcome, {userName}</h4> */}
     </div>
   );
 }

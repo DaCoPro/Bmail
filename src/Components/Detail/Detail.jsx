@@ -1,5 +1,5 @@
 import "./Detail.css";
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect } from "react";
 import * as messagesAPI from "../../utilities/messages-api";
 import Loading from "../Loading/Loading";
 import ShowDetails from "../ShowDetails/ShowDetails";

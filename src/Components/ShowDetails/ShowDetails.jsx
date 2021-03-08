@@ -1,7 +1,6 @@
 import "./ShowDetails.css";
 
-export default function ShowDetails({ setMessages, msg, activeMsg }) {
-  console.log(msg);
+export default function ShowDetails({ msg }) {
   return (
     <div className="ShowDetails">
       <div className="DetailsBody">

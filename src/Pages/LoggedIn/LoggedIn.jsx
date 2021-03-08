@@ -56,6 +56,7 @@ export default function LoggedIn({ user, setUser, userName }) {
           <div className="DisplayRibbon">
             {activeTab !== 3 ? (
               <ActionRibbon
+                user={user}
                 activeMsg={activeMsg}
                 setMessages={setMessages}
                 setSentMessages={setSentMessages}
@@ -66,6 +67,7 @@ export default function LoggedIn({ user, setUser, userName }) {
             {activeTab === 0 ? <Loading /> : null}
             {activeTab === 1 ? (
               <Inbox
+                user={user}
                 messages={messages}
                 activeMsg={activeMsg}
                 setActiveMsg={setActiveMsg}
@@ -75,6 +77,7 @@ export default function LoggedIn({ user, setUser, userName }) {
             ) : null}
             {activeTab === 2 ? (
               <Sent
+                user={user}
                 sentMessages={sentMessages}
                 activeMsg={activeMsg}
                 setActiveMsg={setActiveMsg}
@@ -82,7 +85,7 @@ export default function LoggedIn({ user, setUser, userName }) {
                 setSentMessages={setSentMessages}
               />
             ) : null}
-            {activeTab === 3 ? <Compose /> : null}
+            {activeTab === 3 ? <Compose user={user} /> : null}
           </div>
         </div>
       </div>
