@@ -26,7 +26,7 @@ export default function SentListItem({
         <h4>{sentMessage.title}</h4>
       </div>
       <div className="IndexLabel">
-        <h4>{sentMessage.sender}</h4>
+        <h4>{sentMessage.receiver}</h4>
       </div>
       <div className="IndexLabel">
         <button className="IndexTrash" onClick={handleDeleteMsg}>

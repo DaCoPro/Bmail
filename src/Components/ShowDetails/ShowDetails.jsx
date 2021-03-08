@@ -9,7 +9,8 @@ export default function ShowDetails({ msg }) {
         </div>
         <div className="DetailsInfo">
           <h4>
-            Sent by {msg.data.sender} on {msg.data.sent}
+            Sent by {msg.data.sender} to {msg.data.receiver} <br />
+            {msg.read ? "Message Read" : "Message Unread"}
           </h4>
         </div>
         <div className="DetailsMsg">
